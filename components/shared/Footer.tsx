@@ -5,20 +5,20 @@ import Image from "next/image";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white py-12">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-screen-xl mx-auto px-4">
         <div>
           <h2 className="text-lg font-bold mb-4">Exclusive</h2>
           <p className="mb-2">Subscribe</p>
           <p className="text-sm mb-4">Get 10% off your first order</p>
-          <form className="flex items-center">
+          <form className="flex">
             <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-2 bg-gray-800 text-white rounded-l-md focus:outline-none"
+              className="w-full px-4 py-2 bg-gray-800 text-white rounded-l-md focus:outline-none h-10"
             />
             <button
               type="submit"
-              className="bg-white text-black px-4 py-2 rounded-r-md"
+              className="bg-white text-black px-4 py-2 rounded-r-md h-10 flex items-center justify-center"
             >
               &rarr;
             </button>
@@ -75,27 +75,14 @@ const Footer: React.FC = () => {
         <div>
           <h2 className="text-lg font-bold mb-4">Download App</h2>
           <p className="text-sm mb-4">Save $3 with App New User Only</p>
-          <div className="flex space-x-2 mb-4">
+          <div className="flex justify-start mb-4">
             <Image
               src="/qr_code.webp"
-              alt="App Store"
-              width={230}
-              height={30}
+              alt="Download App QR Code"
+              width={200}
+              height={200}
+              className="bg-white rounded-md"
             />
-          </div>
-          <div className="flex space-x-4">
-            <a href="#" aria-label="Facebook">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" aria-label="Twitter">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" aria-label="Instagram">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
           </div>
         </div>
       </div>

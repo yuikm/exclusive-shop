@@ -1,7 +1,5 @@
-import { FC } from "react";
-
-const Custom404: FC = () => {
+function Custom404() {
   return <h1>404 - Page Not Found</h1>;
-};
+}
 
 export default Custom404;

@@ -1,3 +1,5 @@
+"use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -7,7 +9,7 @@ import Link from "next/link";
 
 export default function ImageSlider() {
   return (
-    <div className="flex max-container bg-black text-white py-10 m-10">
+    <div className="flex items-center justify-between max-w-screen-xl mx-auto padding-container relative bg-black m-5 rounded-lg">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
@@ -38,7 +40,7 @@ export default function ImageSlider() {
             </div>
             <div>
               <Image
-                src="/iphone_14_model.webp"
+                src="/slider/iphone_14_model.webp"
                 alt="iPhone 14"
                 width={300}
                 height={300}
@@ -53,7 +55,7 @@ export default function ImageSlider() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Image
-                  src="/iphone_14.webp"
+                  src="/slider/iphone_14.webp"
                   alt="Apple Logo"
                   width={200}
                   height={200}

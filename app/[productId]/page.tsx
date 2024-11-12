@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import clsx from "clsx";
 
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
@@ -9,14 +10,14 @@ export default function ProductPage() {
   const [selectedSize, setSelectedSize] = useState("M");
 
   const handleQuantityChange = (type: "increment" | "decrement") => {
-    if (type === "increment") setQuantity(quantity + 1);
+    if (type === "increment") setQuantity((prev) => prev + 1);
     else if (type === "decrement" && quantity > 1) setQuantity(quantity - 1);
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="flex items-center justify-between max-w-screen-xl mx-auto p-4">
       <div className="flex flex-col md:flex-row md:space-x-8">
-        <div className="flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center space-y-4 lg:block">
           <div className="space-y-4">
             {[
               "/iphone_14_model.webp",
@@ -61,9 +62,9 @@ export default function ProductPage() {
             <h3 className="text-sm font-medium">Colours:</h3>
             <div className="flex items-center space-x-2 mt-2">
               <button
-                className={`w-6 h-6 rounded-full ${
-                  selectedColor === "black" ? "ring-2 ring-black" : ""
-                }`}
+                className={clsx("w-6 h-6 rounded-full", {
+                  "ring-2 ring-black": selectedColor === "black",
+                })}
                 style={{ backgroundColor: "black" }}
                 onClick={() => setSelectedColor("black")}
               ></button>
